@@ -22,7 +22,7 @@
 			box-sizing: border-box;
 			}
 			
-			.header {
+			#logo {
 			background-color: #b30000;
 			text-align: center;
 			padding: 5px;
@@ -53,12 +53,12 @@
 			padding: 0;
 			}
 			
-			.topnav {
+			#navbar {
 			overflow: hidden;
 			background-color: #333;
 			}
 			
-			.topnav a {
+			#navbar a {
 			float: left;
 			display: block;
 			color: #f2f2f2;
@@ -67,7 +67,7 @@
 			text-decoration: none;
 			}
 		
-			.topnav a:hover {
+			#navbar a:hover {
 			background-color: #ff6666;
 			color: black;
 			}
@@ -92,7 +92,7 @@
 			background-color Silver;
 			}
 			
-			.row::after {
+			.content::after {
 			content: "";
 			display: table;
 			clear: both;
@@ -111,22 +111,30 @@
 				}
 			}
 			
+			.sticky {
+				position: fixed;
+				top: 0;
+				width: 100%
+			}
 			
+			.sticky + .content {
+				padding-top: 60px;
+			}
 		</style>
 	</head>
 	<body>
 				
-		<div class="header">
+		<div id="logo">
 			<a href="index.html"><img src="https://cdn.discordapp.com/attachments/640610444008095817/830062225204707328/image0.png" style="padding:15px; height:100px; width:100px; float:left"></a>
 			<h1 style="text-align:left">Carolina State Fire and Rescue</h1>
 		</div>
 		
-		<div class="topnav">
+		<div id="navbar">
 			<a href="https://discord.gg/csrp">Main CSRP Discord</a>
 			<a href="application.html">CSFR Application</a>
 		</div>
 		
-		<div class="row">
+		<div class="content">
 			<div class="article" style="background-color:silver">
 				<h2 style="text-align:center"><u>Application Page</u></h2>
 				<h3>Applicant Requirements</h3>
@@ -153,5 +161,20 @@
 		<div class="footer">
 			<p style="color:LightGrey;">CSRP || Carolina State Fire and Rescue</p>
 		</div>
+	
+	<script>
+	window.onscroll = function() {myFunction()};
+
+	var navbar = document.getElementById("navbar");
+	var sticky = navbar.offsetTop;
+
+	function myFunction() {
+		if (window.pageYOffset >= sticky) {
+			navbar.classList.add("sticky")
+		} else {
+			navbar.classList.remove("sticky");
+		}
+	}
+	
 	</body>
 </html>

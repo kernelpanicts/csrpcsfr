@@ -22,7 +22,7 @@
 			box-sizing: border-box;
 			}
 			
-			.header {
+			.logo {
 			background-color: #b30000;
 			text-align: center;
 			padding: 5px;
@@ -53,12 +53,12 @@
 			padding: 0;
 			}
 			
-			.topnav {
+			#navbar {
 			overflow: hidden;
 			background-color: #333;
 			}
 			
-			.topnav a {
+			#navbar a {
 			float: left;
 			display: block;
 			color: #f2f2f2;
@@ -67,14 +67,14 @@
 			text-decoration: none;
 			}
 		
-			.topnav a:hover {
+			#navbar a:hover {
 			background-color: #ff6666;
 			color: black;
 			}
 			
 			.article {
 			float: left;
-			width: 85%;
+			width: 75%;
 			border: 3px solid #b30000;
 			padding: 15px;
 			background-color Silver;
@@ -82,13 +82,13 @@
 			
 			.sider{
 			float: left;
-			width: 15%;
+			width: 25%;
 			border: 3px solid #b30000;
 			padding: 15px;
 			background-color Silver;
 			}
 			
-			.row::after {
+			.content::after {
 			content: "";
 			display: table;
 			clear: both;
@@ -110,21 +110,31 @@
 			body {
 			background-color: #333
 			}
+			
+			.sticky {
+				position: fixed;
+				top: 0;
+				width: 100%
+			}
+			
+			.sticky + .content {
+				padding-top: 60px;
+			}
 		</style>
 	</head>
 	<body>
 		
-		<div class="header">
+		<div class="logo">
 		<img src="https://cdn.discordapp.com/attachments/640610444008095817/830062225204707328/image0.png" Width="170" Height="170" align="center">
 		<h1 align="center">Carolina State Fire and Rescue</h1>
 		</div>
 		
-		<div class="topnav">
+		<div id="navbar">
 			<a href="https://discord.gg/csrp">Main CSRP Discord</a>
 			<a href="application.html">CSFR Application</a>
 		
 		</div>
-	<div class="row">
+	<div class="content">
 		
 		<div class="article" style="background-color: Silver">
 			<h2 style="text-align:center">About CSFR</h2>
@@ -151,11 +161,28 @@
 		<div class="sider" style="background-color: silver">
 			<embed type="text/html" src="peopleofnote.html" width="100%" height="600px">
 		</div>
+		
+		
+	</div>
+	
+	<div class="footer">
+			<p style="color:LightGrey;">CSRP || Carolina State Fire and Rescue</p>
 	</div>
 		
-		<div class="footer">
-			<p style="color:LightGrey;">CSRP || Carolina State Fire and Rescue</p>
-		</div>
+	<script>
+	window.onscroll = function() {myFunction()};
 
+	var navbar = document.getElementById("navbar");
+	var sticky = navbar.offsetTop;
+
+	function myFunction() {
+		if (window.pageYOffset >= sticky) {
+			navbar.classList.add("sticky")
+		} else {
+			navbar.classList.remove("sticky");
+		}
+	}
+	</script>
+	
 	</body>
 </html>
