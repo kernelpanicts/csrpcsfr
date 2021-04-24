@@ -31,6 +31,7 @@
 			
 			#header {
 			background-color: #333;
+			z-index: 1
 			}
 			
 			#header::after {
@@ -119,10 +120,6 @@
 			.sider, .article {
 				width: 100%;
 				}
-			.button {
-				position: relative;
-				left: 50%;
-				}
 			}
 			
 			body {
@@ -139,7 +136,13 @@
 				padding-top: 60px;
 			}
 			
-			.button {
+			.btncont {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			}
+			
+			#button {
 			background-color: #e60000;
 			border: 2px solid #b30000;
 			border-radius: 4px;
@@ -150,11 +153,11 @@
 			display: inline-block;
 			font-size: 20px;
 			font-family: arial;
-			position: relative;
-			left: 44.5%;
+			z-index: 0;
+			size: 50px 20px;
 			}
 			
-			.button:hover {
+			#button:hover {
 			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
 
@@ -188,7 +191,9 @@
 					<p>The CSFR are looking for people who are willing to step out of the traditional "Cops and Robbers" area of play, and want to provide and partake in unique scenarios accross all servers. We are looking for people who can
 					use their better judgement to find the best plan of action to complete rescues, put out fires, and generally assist their community. If you want to save people with medical issues, recover people who are stranded on land 
 					and at sea, or just want to support your community, that is what we do in the Carolina State Fire and Rescue. So what are you waiting for? </p>
-					<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSf-wq3y8zBnpeB-W-t5RE2BZvqkF_eAcsKkWHMDqcFXV5y-oA/viewform?vc=0&c=0&w=1&flr=0&gxids=7628">Application</a>
+				<div class="btncont">
+					<a id="button" href="https://docs.google.com/forms/d/e/1FAIpQLSf-wq3y8zBnpeB-W-t5RE2BZvqkF_eAcsKkWHMDqcFXV5y-oA/viewform?vc=0&c=0&w=1&flr=0&gxids=7628">Application</a>
+				</div>
 			</div>
 			
 			<div class="sider" style="background-color:silver">
