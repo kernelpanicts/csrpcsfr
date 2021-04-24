@@ -16,21 +16,33 @@
 		<meta name="Description" content="Site for the Carolina State Fire and Rescue application">
 		<meta name="Author" content="Ian Kern">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=emboss">
 		
 		<style>
 			* {
 			box-sizing: border-box;
 			}
 			
-			#logo {
+			.logo {
 			background-color: #b30000;
 			text-align: center;
 			padding: 5px;
 			}
 			
+			#header {
+			background-color: #333;
+			}
+			
+			#header::after {
+			content: "";
+			display: table;
+			clear: both;
+			}
+			
 			h1{
-			font-family:arial;
-			font-size: 50px;
+			font-family:"Lobster",Arial;
+			font-size: 30px;
+			text-shadow: 3px 3px 3px #333;
 			}
 			
 			h2{
@@ -53,32 +65,29 @@
 			padding: 0;
 			}
 			
-			#navbar {
+			.navbar {
 			overflow: hidden;
 			background-color: #333;
 			}
 			
-			#navbar a {
+			.navbar a {
 			float: left;
 			display: block;
 			color: #f2f2f2;
 			text-align: left;
 			padding: 14px 16px;
 			text-decoration: none;
+			font-family: arial;
 			}
 		
-			#navbar a:hover {
+			.navbar a:hover {
 			background-color: #ff6666;
 			color: black;
-			}
-
-			body{
-			background-color: #333
 			}
 			
 			.article {
 			float: left;
-			width: 85%;
+			width: 75%;
 			border: 3px solid #b30000;
 			padding: 15px;
 			background-color Silver;
@@ -86,7 +95,7 @@
 			
 			.sider{
 			float: left;
-			width: 15%;
+			width: 25%;
 			border: 3px solid #b30000;
 			padding: 15px;
 			background-color Silver;
@@ -103,12 +112,17 @@
 			padding: 10px;
 			text-align: center;
 			border-top: 3px solid #b30000;
+			text-shadow: 3px 3px 3px #ababab;
 			}
 			
-			@media only screen and (max-width: 600px) {
+			@media only screen and (max-width: 1490px) {
 			.sider, .article {
 				width: 100%;
 				}
+			}
+			
+			body {
+			background-color: #333
 			}
 			
 			.sticky {
@@ -120,18 +134,44 @@
 			.sticky + .content {
 				padding-top: 60px;
 			}
+			
+			.button {
+			background-color: #e60000;
+			border: 2px solid #b30000;
+			border-radius: 4px;
+			color: black;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			font-family: arial;
+			align: center;
+			}
+			
+			.button:hover {
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+
+			.vertical-center {
+			margin: 0;
+			position: relative;
+			left: 45%;
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			}
 		</style>
 	</head>
 	<body>
-				
-		<div id="logo">
-			<a href="index.html"><img src="https://cdn.discordapp.com/attachments/640610444008095817/830062225204707328/image0.png" style="padding:15px; height:100px; width:100px; float:left"></a>
-			<h1 style="text-align:left">Carolina State Fire and Rescue</h1>
-		</div>
-		
-		<div id="navbar">
-			<a href="https://discord.gg/csrp">Main CSRP Discord</a>
-			<a href="application.html">CSFR Application</a>
+		<div id="header">		
+			<div class="logo">
+				<a href="index.html"><img src="https://cdn.discordapp.com/attachments/640610444008095817/830062225204707328/image0.png" style="padding:2px; height:110px; width:110px; float:left"></a>
+				<h1 style="text-align:left">Carolina State Fire and Rescue</h1>
+			</div>
+			<div class="navbar">
+				<a href="https://discord.gg/csrp">Main CSRP Discord</a>
+				<a href="application.html">CSFR Application</a>
+			</div>
 		</div>
 		
 		<div class="content">
@@ -150,11 +190,13 @@
 					<p>The CSFR are looking for people who are willing to step out of the traditional "Cops and Robbers" area of play, and want to provide and partake in unique scenarios accross all servers. We are looking for people who can
 					use their better judgement to find the best plan of action to complete rescues, put out fires, and generally assist their community. If you want to save people with medical issues, recover people who are stranded on land 
 					and at sea, or just want to support your community, that is what we do in the Carolina State Fire and Rescue. So what are you waiting for? </p>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSf-wq3y8zBnpeB-W-t5RE2BZvqkF_eAcsKkWHMDqcFXV5y-oA/viewform?vc=0&c=0&w=1&flr=0&gxids=7628"><img src="https://pluspng.com/img-png/click-here-png-click-here-600.png" alt="Application Link" width="200" height="47"></a>
+				<div class="vertical-center">
+					<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSf-wq3y8zBnpeB-W-t5RE2BZvqkF_eAcsKkWHMDqcFXV5y-oA/viewform?vc=0&c=0&w=1&flr=0&gxids=7628">Application</a>
+				</div>
 			</div>
 			
 			<div class="sider" style="background-color:silver">
-				[Placeholder]
+				<embed type="text/html" src="deptsubdivisions.html" width="100%" height="468px">
 			</div>
 		</div>
 		
@@ -165,16 +207,17 @@
 	<script>
 	window.onscroll = function() {myFunction()};
 
-	var navbar = document.getElementById("navbar");
-	var sticky = navbar.offsetTop;
+	var header = document.getElementById("header");
+	var sticky = header.offsetTop;
 
 	function myFunction() {
 		if (window.pageYOffset >= sticky) {
-			navbar.classList.add("sticky")
+			header.classList.add("sticky")
 		} else {
-			navbar.classList.remove("sticky");
+			header.classList.remove("sticky");
 		}
 	}
+	</script>
 	
 	</body>
 </html>
